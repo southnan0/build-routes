@@ -65,4 +65,6 @@ const buildRoute = (outputPath,preRelativePath) => {
 
     fs.writeFileSync(outputPath, d({routes}));
 };
+
 //TODO： 父级路由权限应该是子路由的集合
+module.exports = buildRoute

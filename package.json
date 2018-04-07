@@ -1,0 +1,46 @@
+{
+  "name": "build-routes",
+  "version": "0.2.0",
+  "description": "auto build routes for antd-pro",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "southnan0",
+  "license": "ISC",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/southnan0/build-routes.git"
+  },
+  "dependencies": {
+    "glob": "^7.1.2",
+    "babel-jest": "^21.0.0",
+    "jest": "^21.0.1",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "lodash": "^4.17.4"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
+  "jest": {
+    "testMatch": [
+      "<rootDir>/tests/?(*.)(spec|test|e2e).js?(x)"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/tests/jasmine.js",
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/tests/styleMock.js"
+    }
+  }
+}

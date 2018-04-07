@@ -1,0 +1,8 @@
+{
+  "name": "系统管理",
+  "icon": "dashboard",
+  "models": [],
+  "permission": "",
+  "hideChildren": false,
+  "exact": true
+}

@@ -1,10 +1,11 @@
 {
   "name": "build-routes",
-  "version": "0.2.0",
+  "version": "0.2.5",
   "description": "auto build routes for antd-pro",
-  "main": "./src/index.js",
+  "main": "./lib/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "babel src --out-dir lib"
   },
   "author": "southnan0",
   "license": "ISC",
@@ -29,7 +30,8 @@
     "presets": [
       "env",
       "react"
-    ]
+    ],
+    "plugins": ["transform-object-rest-spread"]
   },
   "jest": {
     "testMatch": [
@@ -42,5 +44,8 @@
     "moduleNameMapper": {
       "\\.(css|less)$": "<rootDir>/tests/styleMock.js"
     }
+  },
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0"
   }
 }

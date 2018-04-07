@@ -1,11 +1,12 @@
 const generateRoute = require('../src/generateRoute')
+const path = require('path')
 
 const prePath = '../tests/routes';
 const postfix = '.js';
-const arr = generateRoute(prePath, postfix);
+const arr = generateRoute(path.resolve(__dirname),prePath, postfix);
 
-test('generateRoute have length is 4', () => {
-  expect(arr).toHaveLength(4);
+test('generateRoute have length is 1', () => {
+  expect(arr).toHaveLength(1);
 });
 
 test('arr[0].path is system', () => {

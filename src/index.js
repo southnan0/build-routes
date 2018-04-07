@@ -7,11 +7,8 @@ const _ = require('lodash');
 const fs = require('fs');
 const path = require('path');
 
-const prePath = 'src/routes/';
-const postfix = '.js';
-
-const templatePath = path.resolve(__dirname, './route.js');
-const itemTemplatePath = path.resolve(__dirname, './routeItem.js');
+const templatePath = path.resolve(__dirname, '../templates/route.js');
+const itemTemplatePath = path.resolve(__dirname, '../templates/routeItem.js');
 
 const generateRoute = require('./generateRoute');
 
@@ -46,11 +43,11 @@ const sortLayout = (arr, layout) => {
  * 绝对地址
  * @param outputPath
  */
-const buildRoute = (outputPath,preRelativePath) => {
+const buildRoute = (outputPath, basicPath, prePath, postfix) => {
     const strTemplate = fs.readFileSync(templatePath).toString();
     const strItemTemplate = fs.readFileSync(itemTemplatePath).toString();
 
-    const objRoute = generateRoute(prePath, postfix,preRelativePath);
+    const objRoute = generateRoute(basicPath, prePath, postfix);
     const obj = {
         userLayout: sortLayout(_.cloneDeep(objRoute), 'UserLayout'),
         basicLayout: sortLayout(_.cloneDeep(objRoute), 'BasicLayout'),
